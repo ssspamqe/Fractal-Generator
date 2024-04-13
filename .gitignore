@@ -11,6 +11,8 @@ target/
 *.iws
 *.iml
 *.ipr
+.idea
+.idea/*
 
 ### Eclipse ###
 .apt_generated
@@ -36,3 +38,4 @@ build/
 
 ### Mac OS ###
 .DS_Store
+.idea/sonarlint/issuestore/c/3/c3344ed22e1b768b1f885885b6586806cc562470

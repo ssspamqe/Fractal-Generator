@@ -1,5 +1,6 @@
 package com.ssspamqe.fractalgeneration.graphics;
 
+import com.ssspamqe.fractalgeneration.coordinateobjects.Dot;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -127,6 +128,10 @@ public class PixelCanvas {
 
     private int getHalfCanvasDimension(int dimensionValue) {
         return dimensionValue / 2 + (1 - dimensionValue % 2);
+    }
+
+    public Pixel getPixel(Dot dot) {
+        return canvas.get(dot.x()).get(dot.y());
     }
 
 }

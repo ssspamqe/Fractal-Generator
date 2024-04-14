@@ -4,7 +4,6 @@ import com.ssspamqe.fractalgeneration.coordinateobjects.Point;
 
 import java.awt.*;
 
-
 public record AffineTransformation(
         double a,
         double b,

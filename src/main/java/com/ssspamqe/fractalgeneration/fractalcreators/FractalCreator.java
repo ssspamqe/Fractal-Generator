@@ -6,13 +6,15 @@ import com.ssspamqe.fractalgeneration.graphics.Pixel;
 import com.ssspamqe.fractalgeneration.graphics.PixelCanvas;
 import com.ssspamqe.fractalgeneration.pointmodifiers.AffineTransformation;
 import com.ssspamqe.fractalgeneration.pointmodifiers.pointfunctions.PointFunction;
-import lombok.Builder;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.awt.*;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-@Builder
+@Getter
+@RequiredArgsConstructor
 public abstract class FractalCreator {
     protected static final int X_MIN = -1;
     protected static final int X_MAX = 1;

@@ -3,18 +3,25 @@ package com.ssspamqe.fractalgeneration.fractalcreators;
 import com.ssspamqe.fractalgeneration.coordinateobjects.Point;
 import com.ssspamqe.fractalgeneration.graphics.Pixel;
 import com.ssspamqe.fractalgeneration.graphics.PixelCanvas;
+import com.ssspamqe.fractalgeneration.pointmodifiers.AffineTransformation;
+import com.ssspamqe.fractalgeneration.pointmodifiers.pointfunctions.PointFunction;
 import lombok.Builder;
 
 import java.awt.*;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-@Builder
 public class MultiThreadFractalCreator extends FractalCreator {
 
     private static final ReadWriteLock READ_WRITE_LOCK = new ReentrantReadWriteLock();
+
+    @Builder
+    public MultiThreadFractalCreator(int samples, int iterationsPerSample, int offset, List<AffineTransformation> transformations, List<PointFunction> pointFunctions) {
+        super(samples, iterationsPerSample, offset, transformations, pointFunctions);
+    }
 
     @Override
     public void fillCanvas(PixelCanvas canvas) {

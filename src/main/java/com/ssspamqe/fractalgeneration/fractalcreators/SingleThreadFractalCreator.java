@@ -2,11 +2,19 @@ package com.ssspamqe.fractalgeneration.fractalcreators;
 
 import com.ssspamqe.fractalgeneration.coordinateobjects.Point;
 import com.ssspamqe.fractalgeneration.graphics.PixelCanvas;
+import com.ssspamqe.fractalgeneration.pointmodifiers.AffineTransformation;
+import com.ssspamqe.fractalgeneration.pointmodifiers.pointfunctions.PointFunction;
 import lombok.Builder;
 
-@Builder
+import java.util.List;
+
 public class SingleThreadFractalCreator extends FractalCreator {
-    
+
+    @Builder
+    public SingleThreadFractalCreator(int samples, int iterationsPerSample, int offset, List<AffineTransformation> transformations, List<PointFunction> pointFunctions) {
+        super(samples, iterationsPerSample, offset, transformations, pointFunctions);
+    }
+
     @Override
     public void fillCanvas(PixelCanvas canvas) {
         for (int sample = 0; sample < samples; sample++) {

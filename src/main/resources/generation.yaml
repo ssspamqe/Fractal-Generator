@@ -1,0 +1,12 @@
+!!com.ssspamqe.Properties
+affineTransformations: 70
+affineTransformationsGenerationTryouts: 1000000
+samples: 1000000
+offset: -20
+iterationsPerSample: 100
+canvasHeight: 2000
+canvasWidth: 2000
+threads: 6
+generatedImagesPath: ./generatedImages
+generatedImageName: generatedImage
+fileFormat: PNG

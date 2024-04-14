@@ -8,7 +8,6 @@ import java.awt.*;
 public class Pixel {
     private Color color = Color.BLACK;
     private int hits;
-    private double normal = 0.0;
 
     public void incrementHits() {
         hits++;

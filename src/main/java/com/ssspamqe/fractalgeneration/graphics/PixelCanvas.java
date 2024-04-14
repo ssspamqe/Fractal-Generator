@@ -131,7 +131,11 @@ public class PixelCanvas {
     }
 
     public Pixel getPixel(Dot dot) {
-        return canvas.get(dot.x()).get(dot.y());
+        return getPixel(dot.x(), dot.y());
+    }
+
+    public Pixel getPixel(int row, int column) {
+        return canvas.get(row).get(column);
     }
 
 }

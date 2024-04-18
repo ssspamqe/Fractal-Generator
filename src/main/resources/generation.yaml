@@ -1,6 +1,5 @@
 !!com.ssspamqe.Properties
-affineTransformations: 70
-affineTransformationsGenerationTryouts: 1000000
+affineTransformationsAmount: 70
 samples: 1000000
 offset: -20
 iterationsPerSample: 100

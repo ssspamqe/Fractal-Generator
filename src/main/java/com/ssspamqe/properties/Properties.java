@@ -13,10 +13,7 @@ import java.util.List;
 @ToString
 public class Properties {
     @Getter
-    private int affineTransformations;
-
-    @Getter
-    private int affineTransformationsGenerationTryouts;
+    private int affineTransformationsAmount;
 
     @Getter
     private int samples;

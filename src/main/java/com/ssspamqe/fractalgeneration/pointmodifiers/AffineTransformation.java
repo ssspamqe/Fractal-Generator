@@ -1,9 +1,11 @@
 package com.ssspamqe.fractalgeneration.pointmodifiers;
 
 import com.ssspamqe.fractalgeneration.coordinateobjects.Point;
+import lombok.Builder;
 
 import java.awt.*;
 
+@Builder
 public record AffineTransformation(
         double a,
         double b,

@@ -89,7 +89,17 @@ public class Main {
             Color color = new Color(red, green, blue);
 
             if (areCorrectAffineTransformationCoefficients(a, b, c, d)) {
-                return Optional.of(new AffineTransformation(a, b, c, d, e, f, color));
+                var transformation =
+                        AffineTransformation.builder()
+                                .a(a)
+                                .b(b)
+                                .d(d)
+                                .e(e)
+                                .c(c)
+                                .f(f)
+                                .color(color)
+                                .build();
+                return Optional.of(transformation);
             }
         }
         return Optional.empty();

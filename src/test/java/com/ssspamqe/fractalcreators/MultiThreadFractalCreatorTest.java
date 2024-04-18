@@ -1,4 +1,4 @@
-package com.ssspamqe;
+package com.ssspamqe.fractalcreators;
 
 import com.ssspamqe.fractalgeneration.fractalcreators.MultiThreadFractalCreator;
 import com.ssspamqe.fractalgeneration.graphics.PixelCanvas;

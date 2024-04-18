@@ -19,7 +19,13 @@ public class MultiThreadFractalCreator extends FractalCreator {
     private static final ReadWriteLock READ_WRITE_LOCK = new ReentrantReadWriteLock();
 
     @Builder
-    public MultiThreadFractalCreator(int samples, int iterationsPerSample, int offset, List<AffineTransformation> transformations, List<PointFunction> pointFunctions) {
+    public MultiThreadFractalCreator(
+            int samples,
+            int iterationsPerSample,
+            int offset,
+            List<AffineTransformation> transformations,
+            List<PointFunction> pointFunctions
+    ) {
         super(samples, iterationsPerSample, offset, transformations, pointFunctions);
     }
 

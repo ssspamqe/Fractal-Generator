@@ -11,7 +11,13 @@ import java.util.List;
 public class SingleThreadFractalCreator extends FractalCreator {
 
     @Builder
-    public SingleThreadFractalCreator(int samples, int iterationsPerSample, int offset, List<AffineTransformation> transformations, List<PointFunction> pointFunctions) {
+    public SingleThreadFractalCreator(
+            int samples,
+            int iterationsPerSample,
+            int offset,
+            List<AffineTransformation> transformations,
+            List<PointFunction> pointFunctions
+    ) {
         super(samples, iterationsPerSample, offset, transformations, pointFunctions);
     }
 

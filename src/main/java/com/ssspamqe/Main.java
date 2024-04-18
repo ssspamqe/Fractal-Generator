@@ -2,8 +2,6 @@ package com.ssspamqe;
 
 import com.ssspamqe.fractalgeneration.fractalcreators.MultiThreadFractalCreator;
 import com.ssspamqe.fractalgeneration.graphics.PixelCanvas;
-import com.ssspamqe.fractalgeneration.pointmodifiers.pointfunctions.DiskFunction;
-import com.ssspamqe.fractalgeneration.pointmodifiers.pointfunctions.SinusoidalFunction;
 import com.ssspamqe.helpers.affinetranformationsgenerator.AffineTransformationGenerator;
 import com.ssspamqe.helpers.affinetranformationsgenerator.RandomAffineTransformationGenerator;
 import com.ssspamqe.imagerender.ImageRenderer;
@@ -15,7 +13,6 @@ import org.yaml.snakeyaml.constructor.Constructor;
 import org.yaml.snakeyaml.inspector.TagInspector;
 
 import java.nio.file.Path;
-import java.util.List;
 
 public class Main {
 
@@ -28,7 +25,7 @@ public class Main {
 
     private static Properties properties;
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         properties = getProperties();
 
         var fractalGenerator = buildFractalGeneratorFromProperties();
@@ -45,7 +42,7 @@ public class Main {
         return MultiThreadFractalCreator.builder()
                 .samples(properties.getSamples())
                 .offset(properties.getOffset())
-                .pointFunctions(List.of(new DiskFunction(), new SinusoidalFunction()))
+                .pointFunctions(properties.getPointFunctions())
                 .iterationsPerSample(properties.getIterationsPerSample())
                 .transformations(affineTransformations)
                 .build();
@@ -60,18 +57,15 @@ public class Main {
         imageRenderer.renderImage(canvas, imagePath, fileName, format);
     }
 
-
-    private static Properties getProperties() {
+    private Properties getProperties() {
         var loaderoptions = new LoaderOptions();
         TagInspector taginspector =
                 tag -> tag.getClassName().equals(Properties.class.getName());
         loaderoptions.setTagInspector(taginspector);
         Yaml yaml = new Yaml(new Constructor(Properties.class, loaderoptions));
 
-        var inputStream = Main.class.getClassLoader().getResourceAsStream(PROPERTIES_FILE_PATH);
+        var inputStream = this.getClass().getClassLoader().getResourceAsStream(PROPERTIES_FILE_PATH);
 
         return yaml.load(inputStream);
     }
-
-
 }

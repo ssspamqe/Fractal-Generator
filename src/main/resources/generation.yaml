@@ -1,8 +1,12 @@
-!!com.ssspamqe.Properties
+!!com.ssspamqe.properties.Properties
 affineTransformationsAmount: 70
 samples: 1000000
 offset: -20
 iterationsPerSample: 100
+pointFunctionTypes:
+  - HEART
+  - SINUSOIDAL
+  - POLAR
 canvasHeight: 2000
 canvasWidth: 2000
 threads: 6

@@ -2,7 +2,7 @@ package com.ssspamqe.fractalgeneration.pointmodifiers.pointfunctions;
 
 import com.ssspamqe.fractalgeneration.coordinateobjects.Point;
 
-public class DiscFunction implements PointFunction {
+public class DiskFunction implements PointFunction {
 
     @Override
     public Point applyOn(Point oldPoint) {

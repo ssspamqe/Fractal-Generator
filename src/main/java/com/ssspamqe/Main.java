@@ -3,7 +3,7 @@ package com.ssspamqe;
 import com.ssspamqe.fractalgeneration.fractalcreators.MultiThreadFractalCreator;
 import com.ssspamqe.fractalgeneration.graphics.PixelCanvas;
 import com.ssspamqe.fractalgeneration.pointmodifiers.AffineTransformation;
-import com.ssspamqe.fractalgeneration.pointmodifiers.pointfunctions.DiscFunction;
+import com.ssspamqe.fractalgeneration.pointmodifiers.pointfunctions.DiskFunction;
 import com.ssspamqe.fractalgeneration.pointmodifiers.pointfunctions.SinusoidalFunction;
 import com.ssspamqe.imagerender.ImageRenderer;
 import com.ssspamqe.imagerender.JavaGraphicsImageRenderer;
@@ -37,7 +37,7 @@ public class Main {
         var fractalGenerator = MultiThreadFractalCreator.builder()
                 .samples(properties.getSamples())
                 .offset(properties.getOffset())
-                .pointFunctions(List.of(new DiscFunction(), new SinusoidalFunction()))
+                .pointFunctions(List.of(new DiskFunction(), new SinusoidalFunction()))
                 .iterationsPerSample(properties.getIterationsPerSample())
                 .transformations(affineTransformations)
                 .build();

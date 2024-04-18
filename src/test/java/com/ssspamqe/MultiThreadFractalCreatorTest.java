@@ -46,7 +46,6 @@ public class MultiThreadFractalCreatorTest {
                 .iterationsPerSample(ITERATIONS_PER_SAMPLE)
                 .transformations(buildTransformations())
                 .build();
-
     }
 
     private List<AffineTransformation> buildTransformations() {

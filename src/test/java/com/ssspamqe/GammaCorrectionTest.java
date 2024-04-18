@@ -20,7 +20,7 @@ public class GammaCorrectionTest {
     void should_repaintPixels_when_theyWereHit() {
         //Arrange
         PixelCanvas canvas = new PixelCanvas(HEIGHT, WIDTH);
-        
+
         var oldColor = new Color(100,100,100);
 
         var pixel = canvas.getPixel(0,1);

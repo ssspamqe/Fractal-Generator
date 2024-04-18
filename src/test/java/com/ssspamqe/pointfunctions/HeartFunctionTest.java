@@ -3,6 +3,7 @@ package com.ssspamqe.pointfunctions;
 import com.ssspamqe.fractalgeneration.coordinateobjects.Point;
 import com.ssspamqe.fractalgeneration.pointmodifiers.pointfunctions.HeartFunction;
 import com.ssspamqe.fractalgeneration.pointmodifiers.pointfunctions.PointFunction;
+import com.ssspamqe.pointfunctions.customasserts.PointAssert;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -17,9 +18,9 @@ public class HeartFunctionTest {
     public void should_performCorrectCalculations() {
         var point = new Point(1, 1);
 
-        var calculatedPoint = heartFunction.applyOn(point);
+        var actualPoint = heartFunction.applyOn(point);
 
-        assertThat(calculatedPoint.x()).isCloseTo(1.27, withPrecision(DEFAULT_PRECISION));
-        assertThat(calculatedPoint.y()).isCloseTo(-0.63, withPrecision(DEFAULT_PRECISION));
+        var expectedPoint = new Point(1.27, -0.63);
+        PointAssert.assertThat(actualPoint).isCloseTo(expectedPoint, withPrecision(DEFAULT_PRECISION));
     }
 }
